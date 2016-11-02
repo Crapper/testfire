@@ -1,0 +1,31 @@
+  <table class="table table-hover table-striped table-sortable">
+  <thead class="thead-inverse">
+    <tr>
+      <th *ngFor="let header of menuheader">
+        {{header.headeritem}}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of menu | async">
+      <td>
+          <div class="form-group row">
+            <div class="col-xs-10">
+              <input class="form-control" type="text" #updatetext [value]="item.text">
+            </div>
+          </div>
+      </td>
+      <td>
+        <div class="form-group row">
+            <div class="col-xs-10">
+              <input class="form-control" type="number" #updateorder [value]="item.order">
+            </div>
+          </div>
+      </td>
+      <td>
+        <button class="btn btn-primary" (click)="updateItem(item.$key, updatetext.value, updateorder.value)">Update</button>
+        <button class="btn btn-danger" (click)="deleteItem(item.$key)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
