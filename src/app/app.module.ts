@@ -29,11 +29,11 @@ import { ActiveDirective } from './shared/active.directive';
 
 // Must export the config
 export const firebaseConfig = {
-  apiKey: 'AIzaSyB9sfjFV51l3_VU_wYG8B_TTUnuPU_RfnQ',
-  authDomain: 'firetest-50afd.firebaseapp.com',
-  databaseURL: 'https://firetest-50afd.firebaseio.com',
-  storageBucket: 'firetest-50afd.appspot.com',
-  messagingSenderId: "583705214229"
+  apiKey: 'apikey',
+  authDomain: 'domain',
+  databaseURL: 'url',
+  storageBucket: 'storge',
+  messagingSenderId: "id"
 };
 
 
