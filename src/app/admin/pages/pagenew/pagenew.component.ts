@@ -1,37 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+
+import { PageService } from '../../shared/page.service';
 
 @Component({
   selector: 'app-pagenew',
   templateUrl: './pagenew.component.html',
   styleUrls: ['./pagenew.component.css']
 })
-export class PagenewComponent implements OnInit {
-pages: FirebaseListObservable<any>;
-images: FirebaseListObservable<any>;
-allImages = [];
-body;
-  constructor(private af: AngularFire, private router: Router) {
-    var storage = firebase.storage();
+export class PagenewComponent implements OnInit{
 
-     this.images = af.database.list('/images', { preserveSnapshot: true });
-     this.images.subscribe(snapshots => {
-                            snapshots.forEach(snapshot => {
-                              this.allImages.push({title: snapshot.val().name, value: snapshot.val().link})
-                            });
-                          })
+  allImages;
+  body;
 
-     this.pages = af.database.list('/pages');                      
+  constructor(private router: Router, private pageService: PageService) {
+             
   }
-  ngOnInit() {
+  ngOnInit(){
+    this.allImages = this.pageService.getImageList();
   }
+
   keyupHandlerFunction(content){
     this.body = content;
   }
 
-  saveItem(newTitle: string) {
-    this.pages.push({ title: newTitle, body: this.body });
+  saveItem(newTitle: string, isHome:boolean) {
+    this.pageService.savePage(newTitle,this.body, isHome);
   }
 
   backToList(){

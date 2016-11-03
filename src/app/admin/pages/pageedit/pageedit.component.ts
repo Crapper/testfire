@@ -1,6 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
+import { NgForm } from '@angular/forms';
+import { PageService } from '../../shared/page.service';
+
 import { GrowlMessagesService } from '../../shared/growlmessages.service';
 
 @Component({
@@ -9,41 +11,37 @@ import { GrowlMessagesService } from '../../shared/growlmessages.service';
   styleUrls: ['./pageedit.component.css']
 })
 export class PageeditComponent implements OnInit {
+  
   key: string;
-  page: FirebaseObjectObservable<any>;
-  pageTitle: string;
+  page: any;
+  allImages;
   body;
   message;
-  constructor(private router: Router, private activateRoute: ActivatedRoute, private af : AngularFire, private growl: GrowlMessagesService) { 
-    
-    
+
+  constructor(private router: Router, private activateRoute: ActivatedRoute, private growl: GrowlMessagesService, private pageService: PageService) { 
+
   }
 
   ngOnInit() {
+    this.allImages = this.pageService.getImageList();
     this.key = this.activateRoute.snapshot.params['key'];
-
-    this.page = this.af.database.object('/pages/' + this.key);
+    this.page = this.pageService.getPage(this.key);
+    
   }
+
   keyupHandlerFunction(content){
     this.body = content;
   }
 
-  updatePage(newTitle: any) {
-    this.growl.pushMessage('Pagina is ge-updated');
-    this.page.update({title: newTitle, body: this.body}).then(_ => this.router.navigate(['/admin/pages']));
-   
-    
-
+  updatePage(form: NgForm){
+      this.growl.pushMessage('Pagina is ge-updated');
+      this.pageService.updatePage(form.value,this.body, this.key)
+      .then( _ => this.router.navigate(['/admin/pages']) );
   }
-
+  
   backToList(){
     this.growl.pushMessage('');
     this.router.navigate(['/admin/pages']);
-  }
-  ngOnDestroy(){
-    
-    
-    
   }
 
 }

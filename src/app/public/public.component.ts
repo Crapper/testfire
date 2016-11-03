@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
   selector: 'app-public',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PublicComponent implements OnInit {
 
-  constructor() {
+  pages:FirebaseListObservable<any>;
+
+  constructor(private af: AngularFire) {
+
+    this.pages = af.database.list('/pages');
+    console.log(this.pages);
    }
 
   ngOnInit() {

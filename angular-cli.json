@@ -15,14 +15,11 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
-        "./assets/dist/css/AdminLTE.min.css",
-        "./assets/dist/css/skins/_all-skins.min.css",
         "../node_modules/primeng/resources/themes/omega/theme.css",
         "../node_modules/primeng/resources/primeng.min.css",
         "styles.css"
       ],
       "scripts": [
-        "./langs/nl.js",
         "../node_modules/tinymce/tinymce.js",
         "../node_modules/tinymce/themes/modern/theme.js",
         "../node_modules/tinymce/plugins/link/plugin.js",
