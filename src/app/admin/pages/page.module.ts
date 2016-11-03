@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+<<<<<<< HEAD
 import { GrowlModule } from 'primeng/primeng';
 import {InplaceModule} from 'primeng/primeng';
+=======
+import {GrowlModule} from 'primeng/primeng';
+>>>>>>> 8fec96a3d75fa9b83eddc27d07bec090a24ff7c0
 
 
 import { LimitcharsPipe } from '../../shared/limitchars.pipe';
@@ -31,8 +35,12 @@ import { FormsModule } from '@angular/forms';
         CommonModule,
         pageRouting,
         FormsModule,
+<<<<<<< HEAD
         GrowlModule,
         InplaceModule
+=======
+        GrowlModule
+>>>>>>> 8fec96a3d75fa9b83eddc27d07bec090a24ff7c0
     ]
 })
 

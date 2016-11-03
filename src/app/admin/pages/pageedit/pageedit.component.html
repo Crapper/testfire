@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <form (ngSubmit)="updatePage(f)" #f="ngForm">
 <div class="form-group row">
             <div class="col-xs-10">
@@ -20,6 +21,14 @@
     </span>
 </p-inplace>
 
+=======
+<div class="form-group row">
+            <div class="col-xs-12">
+              <label for="titel">Titel</label>
+              <input class="form-control" type="text" #newTitle placeholder="Titel van de pagina" [ngModel] = "(page | async)?.title">
+            </div>
+</div>
+>>>>>>> 8fec96a3d75fa9b83eddc27d07bec090a24ff7c0
 <div class="form-group row">
             <div class="col-xs-12">
               <label for="body">Body</label>
@@ -28,18 +37,28 @@
                   [imagelist] = allImages
                   [htmlEditor] = "(page | async)?.body"
                 (onEditorKeyup)="keyupHandlerFunction($event)"
+<<<<<<< HEAD
                 (valueChange) = "keyupHandlerFunction($event)"
                 (ngModelChange)="page.body=$event"
+=======
+>>>>>>> 8fec96a3d75fa9b83eddc27d07bec090a24ff7c0
                 >
               </simple-tiny>
             </div>
 </div>
 
+<<<<<<< HEAD
 </form>
 <div class="row">
             <div class="col-xs-12">
               <!--(click)="updatePage(newTitle.value, body.value, isHome.value , slug.value)"-->
               <button class="btn btn-success pull-right" type="submit" >Opslaan</button>
+=======
+<div class="form-group row">
+            <div class="col-xs-12">
+              
+              <button class="btn btn-success pull-right" (click)="updatePage(newTitle.value)">Opslaan</button>
+>>>>>>> 8fec96a3d75fa9b83eddc27d07bec090a24ff7c0
               
               <button class="btn btn-default pull-right" (click)="backToList()" style="margin-right: 5px;">Annuleren</button>
               
