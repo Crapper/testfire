@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFire} from 'angularfire2';
 import { Router } from '@angular/router';
 import { AuthGuard } from './auth/auth-guard.service';
-
 import { AppComponent } from './app.component';
+
 import { AdminComponent } from './admin/admin.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ActiveDirective } from './shared/active.directive';
