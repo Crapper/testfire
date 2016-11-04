@@ -19,7 +19,7 @@ export class PageeditComponent implements OnInit {
   message;
 
   constructor(private router: Router, private activateRoute: ActivatedRoute, private growl: GrowlMessagesService, private pageService: PageService) {
-
+    
   }
 
   ngOnInit() {

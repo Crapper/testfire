@@ -8,6 +8,7 @@ import { PageService } from '../../shared/page.service';
   templateUrl: './pagenew.component.html',
   styleUrls: ['./pagenew.component.css']
 })
+
 export class PagenewComponent implements OnInit {
 
   allImages;

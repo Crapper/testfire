@@ -26,5 +26,4 @@ import { adminRouting } from './admin.routing';
 
 export class AdminModule {
 
-
 }

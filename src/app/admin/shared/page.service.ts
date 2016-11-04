@@ -18,7 +18,6 @@ export class PageService {
       });
     })
 
-
   }
 
   getPageList() {

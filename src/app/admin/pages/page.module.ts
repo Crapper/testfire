@@ -14,7 +14,6 @@ import { PageComponent } from './page.component';
 import { PageeditComponent } from './pageedit/pageedit.component';
 import { FormsModule } from '@angular/forms';
 
-
 @NgModule({
     declarations: [
         LimitcharsPipe,
