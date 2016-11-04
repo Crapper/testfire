@@ -1,47 +1,40 @@
 <form (ngSubmit)="updatePage(f)" #f="ngForm">
-<div class="form-group row">
-            <div class="col-xs-10">
-              <label for="titel">Titel</label>
-              <input class="form-control" type="text"  name="title" placeholder="Titel van de pagina" [ngModel] = "(page | async)?.title">
-            </div>
-            <div class="col-xs-2">
-                <label> 
-                  <input type="checkbox" name="ishome" #isHome [ngModel] = "(page | async)?.ishome" (ngModelChange)="page.ishome=$event" class="flat-red" checked>
-                </label>
-                Is Home Pagina?
-            </div>
-</div>
-<p-inplace closable="closable">
+  <div class="form-group row">
+    <div class="col-xs-10">
+      <label for="titel">Titel</label>
+      <input class="form-control" type="text" name="title" placeholder="Titel van de pagina" [ngModel]="(page | async)?.title">
+    </div>
+    <div class="col-xs-2">
+      <label> 
+        <input type="checkbox" name="ishome" #isHome [ngModel] = "(page | async)?.ishome" (ngModelChange)="page.ishome=$event" class="flat-red" checked>
+      </label> Is Home Pagina?
+    </div>
+  </div>
+  <p-inplace closable="closable">
     <span pInplaceDisplay>
         {{ (page | async)?.slug }}
     </span>
     <span pInplaceContent>
         <input type="text" name="slug" #slug [ngModel] = "(page | async)?.slug" (ngModelChange)="page.slug=$event" pInputText>
     </span>
-</p-inplace>
+  </p-inplace>
 
-<div class="form-group row">
-            <div class="col-xs-12">
-              <label for="body">Body</label>
-                <simple-tiny
-                  [elementId]="'my-editor-id'"
-                  [imagelist] = allImages
-                  [htmlEditor] = "(page | async)?.body"
-                (onEditorKeyup)="keyupHandlerFunction($event)"
-                (valueChange) = "keyupHandlerFunction($event)"
-                (ngModelChange)="page.body=$event"
-                >
-              </simple-tiny>
-            </div>
-</div>
+  <div class="form-group row">
+    <div class="col-xs-12">
+      <label for="body">Body</label>
+      <simple-tiny [elementId]="'my-editor-id'" [imagelist]=a llImages [htmlEditor]="(page | async)?.body" (onEditorKeyup)="keyupHandlerFunction($event)"
+        (valueChange)="keyupHandlerFunction($event)" (ngModelChange)="page.body=$event">
+      </simple-tiny>
+    </div>
+  </div>
 
 </form>
 <div class="row">
-            <div class="col-xs-12">
-              <!--(click)="updatePage(newTitle.value, body.value, isHome.value , slug.value)"-->
-              <button class="btn btn-success pull-right" type="submit" >Opslaan</button>
-              
-              <button class="btn btn-default pull-right" (click)="backToList()" style="margin-right: 5px;">Annuleren</button>
-              
-            </div>
+  <div class="col-xs-12">
+    <!--(click)="updatePage(newTitle.value, body.value, isHome.value , slug.value)"-->
+    <button class="btn btn-success pull-right" type="submit">Opslaan</button>
+
+    <button class="btn btn-default pull-right" (click)="backToList()" style="margin-right: 5px;">Annuleren</button>
+
+  </div>
 </div>
