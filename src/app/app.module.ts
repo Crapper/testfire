@@ -5,9 +5,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing } from './app.routing';
 
-
 import { AppComponent } from './app.component';
-import { AngularFireModule} from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
 
 import { HeaderComponent } from './header.component';
 import { FooterComponent } from './footer.component';
@@ -22,10 +21,6 @@ import { PublicModule } from './public/public.module';
 
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ActiveDirective } from './shared/active.directive';
-
-
-
-
 
 // Must export the config
 export const firebaseConfig = {

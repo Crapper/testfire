@@ -1,25 +1,25 @@
-
 <div class="form-group row">
-            <div class="col-xs-12">
-              <label for="titel">Titel</label>
-              <input class="form-control" type="text" #newTitle placeholder="Titel van de pagina">
-            </div>
+  <div class="col-xs-10">
+    <label for="titel">Titel</label>
+    <input class="form-control" type="text" #newTitle placeholder="Titel van de pagina">
+  </div>
+  <div class="col-xs-2">
+    <label> 
+        <input type="checkbox" #isHome [ngModel] = "(page | async)?.ishome" class="flat-red" checked>
+    </label> Is Home Pagina?
+  </div>
 </div>
 <div class="form-group row">
-            <div class="col-xs-12">
-              <label for="body">Body</label>
-                <simple-tiny
-                  [elementId]="'my-editor-id'"
-                  [imagelist] = allImages
-                (onEditorKeyup)="keyupHandlerFunction($event)"
-                >
-              </simple-tiny>
-            </div>
+  <div class="col-xs-12">
+    <label for="body">Body</label>
+    <simple-tiny [elementId]="'my-editor-id'" [imagelist]=a llImages (onEditorKeyup)="keyupHandlerFunction($event)">
+    </simple-tiny>
+  </div>
 </div>
 
 <div class="form-group row">
-            <div class="col-xs-12">
-              <button class="btn btn-success pull-right" (click)="saveItem(newTitle.value)">Opslaan</button>
-              <button class="btn btn-default pull-right" (click)="backToList()" style="margin-right: 5px;">Annuleren</button>
-            </div>
+  <div class="col-xs-12">
+    <button class="btn btn-success pull-right" (click)="saveItem(newTitle.value, isHome.value)">Opslaan</button>
+    <button class="btn btn-default pull-right" (click)="backToList()" style="margin-right: 5px;">Annuleren</button>
+  </div>
 </div>

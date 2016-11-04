@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm12">
+            <div class="article" *ngFor="let page of pages | async">
+              <h1>{{ page.title }}</h1>
+                <div class="body" [innerHTML]="page.body"></div>
+              </div>
+            
+        </div>
+    </div>
+</div>

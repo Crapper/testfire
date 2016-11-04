@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import {GrowlModule} from 'primeng/primeng';
-
+import { GrowlModule } from 'primeng/primeng';
+import { InplaceModule } from 'primeng/primeng';
 
 import { LimitcharsPipe } from '../../shared/limitchars.pipe';
 import { SimpleTinyComponent } from '../../shared/simple-tiny.component';
-
-
 
 import { PagelistComponent } from './pagelist/pagelist.component';
 import { PagenewComponent } from './pagenew/pagenew.component';
@@ -18,19 +16,20 @@ import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
-    declarations:[  
-    LimitcharsPipe,
-    PagelistComponent,
-    PagenewComponent,
-    PageComponent,
-    PageeditComponent,
-    SimpleTinyComponent
+    declarations: [
+        LimitcharsPipe,
+        PagelistComponent,
+        PagenewComponent,
+        PageComponent,
+        PageeditComponent,
+        SimpleTinyComponent
     ],
-    imports:[
+    imports: [
         CommonModule,
         pageRouting,
         FormsModule,
-        GrowlModule
+        GrowlModule,
+        InplaceModule
     ]
 })
 
