@@ -26,7 +26,6 @@ export class PageeditComponent implements OnInit {
     this.allImages = this.pageService.getImageList();
     this.key = this.activateRoute.snapshot.params['key'];
     this.page = this.pageService.getPage(this.key);
-
   }
 
   keyupHandlerFunction(content) {
