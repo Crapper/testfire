@@ -43,4 +43,5 @@ export class PageeditComponent implements OnInit {
     this.router.navigate(['/admin/pages']);
   }
 
+
 }
